@@ -1,94 +1,18 @@
-* {
-    box-sizing: border-box;
-}
+* {  box-sizing: border-box;}
+html { height: 100%; width: 100%;}
+body { background-color: rebeccapurple;  color: white;  display: flex;  align-items: center;  justify-content: center;  font-family: "Times New Roman", Times, serif;  margin: 0;  height: 100%;  width: 100%;}
 
-html {
-    height: 100%;
-    width: 100%;
-}
+.container {border-radius: 20px;  background-color: rgb(46, 12, 80); box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); height: 50%; width: 50%;}
+.header {  padding: 1rem;}
+.pw {  background-color: rgb(69, 28, 109);  display: flex;  font-size: 1.5rem;  align-items: center;  height: 70px;  width: 100%;  position: relative;  padding: 1rem;  overflow: auto;}
+.pw button {background-color: white; border: none; color: rgb(29, 2, 56); cursor: pointer; font-weight: bold; padding: 0.25rem; position: absolute; top: 0; right: 0; transform: translate(0, 20%); transition: opacity 0.2s ease, transform 0.2s ease;  opacity: 0;}
+.pw:hover button {  opacity: 1;  transform: translate(0, 0%);}
+.x-body {padding: 0 1rem 1rem;}
+.form-control {font-size: 1.5rem;  color: #eee; display: flex; justify-content: space-between;margin: 1rem 0;}
+.generate { background-color: white; border: none; color: rebeccapurple; cursor: pointer; display: block; font-size: 1.5rem; font-weight: bold; padding: 0.75rem; width: 100%; margin-top: 5%;}
+#len{ background-color: transparent;color: white;border-style: solid;border-color: white;text-align: center;}
 
-body {
-    background-color: rebeccapurple;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: "Times New Roman", Times, serif;
-    margin: 0;
-    height: 100%;
-    width: 100%;
-}
-
-.container {
-    border-radius: 20px;
-    background-color: rgb(46, 12, 80);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    height: 50%;
-    width: 50%;
- 
-}
-
-.header {
-    padding: 1rem;
-}
-
-.pw {
-    background-color: rgb(69, 28, 109);
-    display: flex;
-    font-size: 1.5rem;
-    align-items: center;
-    height: 70px;
-    width: 100%;
-    position: relative;
-    padding: 1rem;
-    overflow: auto;
-}
-
-.pw button {
-    background-color: white;
-    border: none;
-    color: rgb(29, 2, 56);
-    cursor: pointer;
-    font-weight: bold;
-    padding: 0.25rem;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(0, 20%);
-    transition: opacity 0.2s ease, transform 0.2s ease;
-    opacity: 0;
-}
-
-.pw:hover button {
-    opacity: 1;
-    transform: translate(0, 0%);
-}
-
-.x-body {
-    padding: 0 1rem 1rem;
-}
-
-.form-control {
-    font-size: 1.5rem;
-    color: #eee;
-    display: flex;
-    justify-content: space-between;
-    margin: 1rem 0;
-}
-
-.generate {
-    background-color: white;
-    border: none;
-    color: rebeccapurple;
-    cursor: pointer;
-    display: block;
-    font-size: 1.5rem;
-    font-weight: bold;
-    padding: 0.75rem;
-    width: 100%;
-    margin-top: 5%;
-}
-
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button { -webkit-appearance: none;}
 input[type="checkbox"]
 {
     position: relative;
@@ -100,14 +24,9 @@ input[type="checkbox"]
     border-radius: 20px;
     box-shadow: inset 0 0 5px rgba(0,0,0,.2) ;
     transition: .5s;
-
 }
 
-input:checked[type="checkbox"] 
-{
-    background-color: rgb(69, 28, 109)
-}
-
+input:checked[type="checkbox"] {  background-color: rgb(69, 28, 109)}
 input[type="checkbox"]::before
 {
     content: "";
@@ -123,20 +42,4 @@ input[type="checkbox"]::before
     box-shadow: 0 2px 5px rgba(0,0,0,.2);
 }
 
-input:checked[type="checkbox"]:before
-{
-left:30px;
-}
-
-#len
- {
-background-color: transparent;
-color: white;
-border-style: solid;
-border-color: white;
-text-align: center;
-}
-
-input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-}
+input:checked[type="checkbox"]:before{left:30px;}
