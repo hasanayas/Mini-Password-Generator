@@ -1,77 +1,61 @@
-const pwEl = document.getElementById("pw");
-const copyEl = document.getElementById("copy");
-const lenEl = document.getElementById("len");
-const upperEl = document.getElementById("upper");
-const lowerEl = document.getElementById("lower");
-const numberEl = document.getElementById("number");
-const symbolEl = document.getElementById("symbol");
-const generateEl = document.getElementById("generate");
+var upper = document.getElementById("upperCase");
+var lower = document.getElementById("lowerCase");
+var number = document.getElementById("numeral");
+var symbol = document.getElementById("symbol");
+var _password = document.getElementById("password-tag");
+var copyEl = document.getElementById("copy");
+var lenght = document.getElementById("len");
+var create = document.getElementById("create");
 
-const upperLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-const lowerLetters = "abcdefghijklmnopqrstuvwxyz";
-const numbers = "0123456789";
-const symbols = "!@#$%^&*()_+=";
+const upperCaseArray = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const lowerCaseArray = "abcdefghijklmnopqrstuvwxyz";
+const numberArray = "9876543210";
+const symbolArray = "!-_><#&/*+=#";
 
-function getLowercase() {
-    return lowerLetters[Math.floor(Math.random() * lowerLetters.length)];
-}
-
-function getUppercase() {
-    return upperLetters[Math.floor(Math.random() * upperLetters.length)];
-}
-
-function getNumber() {
-    return numbers[Math.floor(Math.random() * numbers.length)];
-}
-
-function getSymbol() {
-    return symbols[Math.floor(Math.random() * symbols.length)];
-}
-
-function generatePassword() {
-    const len = lenEl.value;
+function createPassword() {
+    const len = lenght.value;
 
     let password = "";
 
-    if (upperEl.checked) {
+    if (upper.checked) {
         password += getUppercase();
     }
 
-    if (lowerEl.checked) {
+    if (lower.checked) {
         password += getLowercase();
     }
 
-    if (numberEl.checked) {
+    if (number.checked) {
         password += getNumber();
     }
 
-    if (symbolEl.checked) {
+    if (symbol.checked) {
         password += getSymbol();
     }
 
     for (let i = password.length; i < len; i++) {
-        const x = generateX();
+        const x = createX();
         password += x;
     }
 
-    pwEl.innerText = password;
+    _password.innerText = password;
 }
 
-function generateX() {
+function createX() {
     const xs = [];
-    if (upperEl.checked) {
+    if (upper.checked) {
         xs.push(getUppercase());
     }
 
-    if (lowerEl.checked) {
+    if (lower.checked) {
         xs.push(getLowercase());
     }
 
-    if (numberEl.checked) {
+    if (number.checked) {
         xs.push(getNumber());
     }
 
-    if (symbolEl.checked) {
+    if (symbol.checked) {
         xs.push(getSymbol());
     }
 
@@ -80,11 +64,11 @@ function generateX() {
     return xs[Math.floor(Math.random() * xs.length)];
 }
 
-generateEl.addEventListener("click", generatePassword);
+create.addEventListener("click", createPassword);
 
 copyEl.addEventListener("click", () => {
     const textarea = document.createElement("textarea");
-    const password = pwEl.innerText;
+    const password = _password.innerText;
 
     if (!password) {
         return;
@@ -95,5 +79,21 @@ copyEl.addEventListener("click", () => {
     textarea.select();
     document.execCommand("Copy");
     textarea.remove();
-    alert("Şifre Kopyalandı");
+    alert("Password Copied");
 });
+
+function getLowercase() {
+    return lowerCaseArray[Math.floor(Math.random() * lowerCaseArray.length)];
+}
+
+function getUppercase() {
+    return upperCaseArray[Math.floor(Math.random() * upperCaseArray.length)];
+}
+
+function getNumber() {
+    return numberArray[Math.floor(Math.random() * numberArray.length)];
+}
+
+function getSymbol() {
+    return symbolArray[Math.floor(Math.random() * symbolArray.length)];
+}
